@@ -24,9 +24,9 @@ app.get('/', function (req, res) {
   }else {
     res.send("connected from http:")
   }
-  // console.log('protocol: ' + url.parse(req.url).protocol);
-  // console.log('pathname: ' + url.parse(req.url).pathname);
-  // console.log('host: ' + url.parse(req.url).host);
+  console.log('protocol: ' + url.parse(req.url).protocol);
+  console.log('pathname: ' + url.parse(req.url).pathname);
+  console.log('host: ' + url.parse(req.url).host);
 });
 
 http.createServer(app).listen(80, function () {
