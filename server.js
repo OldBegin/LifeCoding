@@ -28,6 +28,6 @@ app.get('/', function (req, res) {
 http.createServer(app).listen(80, function () {
   console.log('Example app listening on port 80!');
 });
-https.createServer(options,app).listen(3001, function () {
+https.createServer(options,app).listen(443, function () {
   console.log('Example app listening on port 3001!');
 });
