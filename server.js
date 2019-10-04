@@ -19,9 +19,9 @@ app.get('/insecure', function (req, res) {
   res.send('Dangerous!');
 });
 
-http.createServer(app).listen(3000, function () {
+http.createServer(app).listen(80, function () {
   console.log('Example app listening on port 3000!');
 });
-https.createServer(options,app).listen(3001, function () {
+https.createServer(options,app).listen(443, function () {
   console.log('Example app listening on port 3001!');
 });
