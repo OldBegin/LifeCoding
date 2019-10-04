@@ -22,6 +22,6 @@ app.get('/insecure', function (req, res) {
 http.createServer(app).listen(3000, function () {
   console.log('Example app listening on port 3000!');
 });
-https.createServer(option,app).listen(3001, function () {
+https.createServer(options,app).listen(3001, function () {
   console.log('Example app listening on port 3001!');
 });
