@@ -6,6 +6,12 @@ const url = require('url');
 
 var app = express();
 
+// ////////////////  개인용 인증서 ///////////////////////////////////////////
+// const options = {
+//   key: fs.readFileSync('./openSSLcert/key.pem'),
+//   cert: fs.readFileSync('./openSSLcert/key-cert.pem')
+// };
+//////////////  서버용 인증서 ///////////////////////////////////////////
 const options = {
   key: fs.readFileSync('/etc/letsencrypt/live/www.unitedin.kr/privkey.pem'),
   cert: fs.readFileSync('/etc/letsencrypt/live/www.unitedin.kr/cert.pem')
@@ -19,13 +25,9 @@ app.get('/', function (req, res) {
   }
 });
 
-app.get('/insecure', function (req, res) {
-  res.send('Dangerous!');
-});
-
 http.createServer(app).listen(80, function () {
   console.log('Example app listening on port 80!');
 });
-https.createServer(options,app).listen(443, function () {
-  console.log('Example app listening on port 443!');
+https.createServer(options,app).listen(3001, function () {
+  console.log('Example app listening on port 3001!');
 });
