@@ -8,7 +8,7 @@ var app = express();
 
 const options = {
   key: fs.readFileSync('/etc/letsencrypt/live/www.unitedin.kr/privkey.pem'),
-  cert: fs.readFileSync('/etc/letsencrypt/live/www.unitedin.kr/fullchain.pem')
+  cert: fs.readFileSync('/etc/letsencrypt/live/www.unitedin.kr/cert.pem')
 };
 
 app.get('/', function (req, res) {
