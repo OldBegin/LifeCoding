@@ -23,11 +23,12 @@ app.get('/', function (req, res) {
   }else {
     res.send("connected from http:")
   }
+	console.log('protocol: '+ url.parse(req.url).protocol);
 });
 
 http.createServer(app).listen(80, function () {
   console.log('Example app listening on port 80!');
 });
 https.createServer(options,app).listen(443, function () {
-  console.log('Example app listening on port 3001!');
+  console.log('Example app listening on port 443!');
 });
