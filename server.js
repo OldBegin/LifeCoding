@@ -11,6 +11,7 @@ var app = express();
 //   key: fs.readFileSync('./openSSLcert/key.pem'),
 //   cert: fs.readFileSync('./openSSLcert/key-cert.pem')
 // };
+
 ////////////  서버용 인증서 ///////////////////////////////////////////
 const options = {
   key: fs.readFileSync('/etc/letsencrypt/live/www.unitedin.kr/privkey.pem'),
@@ -23,22 +24,14 @@ app.get('/', function (req, res) {
   }else {
     res.send("connected from http:")
   }
-<<<<<<< HEAD
-  console.log('protocol: ' + url.parse(req.url).protocol);
-  console.log('pathname: ' + url.parse(req.url).pathname);
-  console.log('host: ' + url.parse(req.url).host);
-=======
-	console.log('protocol: '+ url.parse(req.url).protocol);
->>>>>>> 3c6a6797f80e224398a8b7afe19003a479e5a9a6
+  // console.log('protocol: ' + url.parse(req.url).protocol);
+  // console.log('pathname: ' + url.parse(req.url).pathname);
+  // console.log('host: ' + url.parse(req.url).host);
 });
 
 http.createServer(app).listen(80, function () {
   console.log('Example app listening on port 80!');
 });
-<<<<<<< HEAD
-https.createServer(app).listen(443, function () {
-=======
 https.createServer(options,app).listen(443, function () {
->>>>>>> 3c6a6797f80e224398a8b7afe19003a479e5a9a6
   console.log('Example app listening on port 443!');
 });
